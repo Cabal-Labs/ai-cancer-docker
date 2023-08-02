@@ -2,8 +2,8 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY download.py .
+COPY main.py .
 
 RUN pip install --no-cache-dir requests pillow numpy scikit-learn
 
-ENTRYPOINT ["python", "./download.py"]
+ENTRYPOINT ["python", "./main.py"]

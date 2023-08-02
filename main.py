@@ -3,7 +3,7 @@
 # %pip install concrete-ml
 
 """Importing Libraries"""
-
+import pickle
 import os
 import numpy as np
 from PIL import Image
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     print("Accuracy:", accuracy)
 
     # Set the path to save the model
-    model_filepath = 'logistic_regression_model_weights.joblib'
-
-    # Save the model using joblib
-    joblib.dump(logistic_regression_model, model_filepath)
+    model_filepath = 'output/weights.pkl'
+    os.makedirs("output", exist_ok=True)
+    with open(model_filepath, 'wb') as file:
+        pickle.dump(logistic_regression_model, file)
